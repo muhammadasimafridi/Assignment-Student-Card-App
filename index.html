@@ -4,80 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
-        h1{
-            font-weight: 900;
-            font-size: 40px;
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        .container input{
-            width: 350px;
-            height: 30px;
-            padding-left: 8px;
-        }
-        .sub-btn{
-            width: 100px;
-            height: 30px;
-        }
-        .card-box{
-            display: none;
-        }
-        .name-title{
-            font-weight: 400;
-            font-size: 14px;
-        }
-        .age-title{
-            font-weight: 400;
-            font-size: 14px;
-        }
-        .class-title{
-            font-weight: 400;
-            font-size: 14px;
-        }
-        .pic{
-            width: 100px;
-            height: 100px;
-            background-origin: 1px solid black;
-            border-radius: 50%;
-            display: inline-block;
-            align-self: center;
-            margin: 15px 0 50px 0;
-        }
-        .non-hidden{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 8px;
-            width: 300px;
-            height: 350px;
-            padding: 15px 5px 5px 5px;
-            border: 1px solid black;
-            border-radius: 15px;
-            background-color: rgba(0, 0, 255, 0.479);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Student Card App</h1>
@@ -91,36 +18,6 @@
     <div class="card-box"></div>
     
 
-    <script>
-        let body= document.querySelector("body");
-        let container = document.querySelector(".container");
-        let imgUrl = document.querySelector("#img-url");
-        let name = document.querySelector("#name");
-        let age = document.querySelector("#age");
-        let stdClass = document.querySelector("#std-class");
-        let subBtn = document.querySelector(".sub-btn");
-        let cardBox = document.querySelector(".card-box");
-
-        
-        subBtn.addEventListener("click", () => {
-            
-            let card = document.createElement("div");
-            cardBox.appendChild(card);
-            cardBox.classList.add("non-hidden");
-
-            card = `<img src="${imgUrl.value}" class="pic"></img>
-                <p class="name-title"><b>Student Name:</b> ${name.value}</p>
-                <p class="age-title"><b>Student Age:</b> ${age.value}</p>
-                <p class="class-title"><b>Class:</b> ${stdClass.value}</p>`;
-
-                cardBox.innerHTML = card;
-
-                name.value = "";
-                age.value = "";
-                stdClass.value = "";
-                imgUrl.value = "";
-        });
-
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
